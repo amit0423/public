@@ -1,0 +1,31 @@
+{
+  "id": "c2a56b29-111b-4ef0-9172-4d7e556c52ee",
+  "name": "Product-Path",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "Do you have the barcode?",
+            "Do you have the barcode"
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1514980392,
+  "fallbackIntent": false,
+  "events": []
+}

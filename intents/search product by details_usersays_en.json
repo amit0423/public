@@ -1,0 +1,50 @@
+[
+  {
+    "id": "320f9c8b-6ab7-465f-abc8-4d028dbed9e2",
+    "data": [
+      {
+        "text": "oats",
+        "alias": "product-name",
+        "meta": "@product-name",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0
+  },
+  {
+    "id": "1a12d798-c85d-47f7-a330-7259f6d0a5e5",
+    "data": [
+      {
+        "text": "name ",
+        "userDefined": false
+      },
+      {
+        "text": "Traditional Oats",
+        "alias": "product-name",
+        "meta": "@product-name",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0
+  },
+  {
+    "id": "c16c8602-2552-45e1-9cf5-5d1f378b8667",
+    "data": [
+      {
+        "text": "brand ",
+        "userDefined": false
+      },
+      {
+        "text": "Carmans",
+        "alias": "product-brand",
+        "meta": "@product-brand",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1513651959
+  }
+]

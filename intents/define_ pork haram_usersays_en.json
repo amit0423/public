@@ -1,0 +1,67 @@
+[
+  {
+    "id": "382c1cda-4dc4-491c-8a4d-2c5fccbe0464",
+    "data": [
+      {
+        "text": "is ",
+        "userDefined": false
+      },
+      {
+        "text": "ham",
+        "alias": "meat",
+        "meta": "@meat",
+        "userDefined": true
+      },
+      {
+        "text": " haram?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0
+  },
+  {
+    "id": "19e29950-7f48-4f14-bebd-0de4e7e786a8",
+    "data": [
+      {
+        "text": "why ",
+        "userDefined": false
+      },
+      {
+        "text": "bacon",
+        "alias": "meat",
+        "meta": "@meat",
+        "userDefined": false
+      },
+      {
+        "text": " is not allowed?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1513310596
+  },
+  {
+    "id": "e8be4533-1330-403f-b839-d56bdcd755b0",
+    "data": [
+      {
+        "text": "why is ",
+        "userDefined": false
+      },
+      {
+        "text": "pork",
+        "alias": "meat",
+        "meta": "@meat",
+        "userDefined": true
+      },
+      {
+        "text": " haram?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1513310596
+  }
+]

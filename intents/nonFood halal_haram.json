@@ -1,0 +1,28 @@
+{
+  "id": "27d9ec6d-18d5-404d-8019-8b53acab1b7e",
+  "name": "nonFood halal/haram",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": "I am not program to talk about non-food items."
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1513309947,
+  "fallbackIntent": false,
+  "events": []
+}

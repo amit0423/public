@@ -1,0 +1,38 @@
+{
+  "id": "b230d57e-941b-414e-a91c-a023126d418b",
+  "name": "define: halal",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": "Halal is Arabic for permissible. Halal food is that which adheres to Islamic law, as defined in the Koran."
+        },
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": "The Islamic form of slaughtering animals or poultry, dhabiha, involves killing through a cut to the jugular vein, carotid artery and windpipe."
+        },
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": "Animals must be alive and healthy at the time of slaughter and all blood is drained from the carcass. During the process, a Muslim will recite a dedication, know as tasmiya or shahada."
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1513307983,
+  "fallbackIntent": false,
+  "events": []
+}

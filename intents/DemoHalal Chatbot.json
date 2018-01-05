@@ -1,0 +1,28 @@
+{
+  "id": "06db0798-844b-4e53-8be7-8ee2fdf5c42e",
+  "name": "DemoHalal Chatbot",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": []
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1514631716,
+  "fallbackIntent": false,
+  "events": []
+}

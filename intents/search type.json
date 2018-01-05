@@ -1,0 +1,40 @@
+{
+  "id": "4a043451-fbff-4dd6-a3be-19b913d2c15b",
+  "name": "search type",
+  "auto": true,
+  "contexts": [
+    "type"
+  ],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "",
+      "affectedContexts": [
+        {
+          "name": "product",
+          "parameters": {},
+          "lifespan": 1
+        }
+      ],
+      "parameters": [
+        {
+          "id": "8efddef1-c380-4904-b16e-cb2937104fe8",
+          "required": true,
+          "dataType": "@search-type",
+          "name": "search-type",
+          "value": "$search-type",
+          "isList": false
+        }
+      ],
+      "messages": [],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1513651200,
+  "fallbackIntent": false,
+  "events": []
+}

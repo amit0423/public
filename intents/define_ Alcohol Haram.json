@@ -1,0 +1,28 @@
+{
+  "id": "4fe75489-5f77-4513-a5cb-878ae2b9b654",
+  "name": "define: Alcohol Haram",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": "Consuming little intoxicants invites naturally to more consumption and when a person gets addicted to it he is unable to stop himself from the little. Therefore, in view of the religions, it is necessary to declare something unlawful if found intoxicant, and whatever thing is intoxicant should be unlawful. So, it has been mentioned in the hadith: \n(3645) Things which intoxicate in much quantity their little quantity are also haram.\n\nThe bad effect on drinking is that drunken quarrels with people abuse them and creates a disturbance."
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1513309508,
+  "fallbackIntent": false,
+  "events": []
+}

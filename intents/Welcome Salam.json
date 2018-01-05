@@ -1,0 +1,32 @@
+{
+  "id": "6ad05857-3a16-4bf2-839a-273e26ae80ed",
+  "name": "Welcome Salam",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "input.salam",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "Wa-Alaikum-Salaam. I am halal-bot. I can help you identify if branded products are halal, mushbooh or haram based on its ingredients.",
+            "Wa-Alaikum-Salaam."
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": true,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1513132735,
+  "fallbackIntent": false,
+  "events": []
+}

@@ -1,0 +1,26 @@
+[
+  {
+    "value": "beef",
+    "synonyms": [
+      "beef"
+    ]
+  },
+  {
+    "value": "pork",
+    "synonyms": [
+      "pork"
+    ]
+  },
+  {
+    "value": "bacon",
+    "synonyms": [
+      "bacon"
+    ]
+  },
+  {
+    "value": "meat1",
+    "synonyms": [
+      "meat1"
+    ]
+  }
+]

@@ -1,0 +1,46 @@
+{
+  "id": "485dbd2d-a7b3-4cb4-9085-2d30812c0482",
+  "name": "isHalal",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "",
+      "affectedContexts": [
+        {
+          "name": "type",
+          "parameters": {},
+          "lifespan": 5
+        }
+      ],
+      "parameters": [
+        {
+          "id": "eee2c0b8-f9ff-4fed-9e7a-d0589de70982",
+          "dataType": "@product-brand",
+          "name": "product-brand",
+          "value": "$product-brand",
+          "isList": false
+        }
+      ],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "Is it product, ingredients or place?",
+            "Are you trying to search product, ingredients or place?"
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1512552259,
+  "fallbackIntent": false,
+  "events": []
+}

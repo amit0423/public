@@ -1,0 +1,32 @@
+[
+  {
+    "id": "b362c2ca-8c43-438d-815c-359913de4256",
+    "data": [
+      {
+        "text": "barcode",
+        "alias": "barcode",
+        "meta": "@barcode",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0
+  },
+  {
+    "id": "e27bbd06-009f-4597-aef4-5a69542bc1fb",
+    "data": [
+      {
+        "text": "Barcode is ",
+        "userDefined": false
+      },
+      {
+        "text": "barcode",
+        "alias": "barcode",
+        "meta": "@barcode",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0
+  }
+]

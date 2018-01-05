@@ -1,0 +1,29 @@
+{
+  "id": "eeeaca28-6440-4820-b4d2-5421d70494f4",
+  "name": "facebook_media",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "supply.media",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": []
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": true,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1513319194,
+  "fallbackIntent": false,
+  "events": []
+}

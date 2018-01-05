@@ -1,0 +1,48 @@
+{
+  "id": "b0c91cf2-faf6-45a2-9031-55e4e0ac14ef",
+  "parentId": "d5d2fb6e-7196-4c52-98f4-247a397e0801",
+  "rootParentId": "d5d2fb6e-7196-4c52-98f4-247a397e0801",
+  "name": "eNumber - e1xx",
+  "auto": true,
+  "contexts": [
+    "eNumber-followup"
+  ],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "eNumber.eNumber-custom",
+      "affectedContexts": [],
+      "parameters": [
+        {
+          "id": "23e76d7f-3ef2-4a81-946a-d33f5e9aee4a",
+          "required": true,
+          "dataType": "@eNumber-e1xx",
+          "name": "eNumber-e1xx",
+          "value": "$eNumber-e1xx",
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "What is the number in the products ingredients list?(ie e450a , 430)"
+            }
+          ],
+          "isList": false
+        }
+      ],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": []
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1508189124811,
+  "fallbackIntent": false,
+  "events": []
+}

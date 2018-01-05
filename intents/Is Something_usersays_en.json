@@ -1,0 +1,24 @@
+[
+  {
+    "id": "362762ac-ebfe-408c-9237-be6c1051fcf1",
+    "data": [
+      {
+        "text": "is Halal?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0
+  },
+  {
+    "id": "86d6fb1b-9c54-49b4-a884-1642e8e199d6",
+    "data": [
+      {
+        "text": "Halal?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0
+  }
+]

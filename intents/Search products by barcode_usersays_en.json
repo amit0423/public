@@ -1,0 +1,56 @@
+[
+  {
+    "id": "04fc4a18-d8af-4e26-b5ba-377f66e561cb",
+    "data": [
+      {
+        "text": "barcode ",
+        "userDefined": false
+      },
+      {
+        "text": "09319133331396",
+        "alias": "product-barcode",
+        "meta": "@product-barcode",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0
+  },
+  {
+    "id": "371ca5da-3e51-4b3e-93d7-43aa7f0ec140",
+    "data": [
+      {
+        "text": "09319133331396",
+        "alias": "product-barcode",
+        "meta": "@product-barcode",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0
+  },
+  {
+    "id": "de63b6e7-cc87-47c0-8e55-5af26f6b6be7",
+    "data": [
+      {
+        "text": "I know the barcode",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": true,
+    "count": 0,
+    "updated": 1513651380
+  },
+  {
+    "id": "1bdd41cf-5e40-4aa2-aadf-2d2f061aebd9",
+    "data": [
+      {
+        "text": "i have the barcode",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1513651380
+  }
+]

@@ -1,0 +1,86 @@
+{
+  "id": "d5d2fb6e-7196-4c52-98f4-247a397e0801",
+  "name": "eNumber",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "",
+      "affectedContexts": [],
+      "parameters": [
+        {
+          "id": "b18d116b-7f61-4305-96fa-794efcf9f67c",
+          "required": true,
+          "dataType": "@eNumber",
+          "name": "eNumber",
+          "value": "$eNumber",
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "what is the ingredients number?"
+            },
+            {
+              "lang": "en",
+              "value": "Do you like to know if ingredients number in your product is halal or haraam?"
+            }
+          ],
+          "isList": true
+        },
+        {
+          "id": "b7c3ab79-168e-43ce-af0d-848f76f3d170",
+          "required": true,
+          "dataType": "@sys.number",
+          "name": "number",
+          "value": "$number",
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "Do you like to know if ingredients number in your product is halal or haraam?"
+            }
+          ],
+          "isList": true
+        }
+      ],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "E-Numbers represent specific food additives, used by the food industry in the manufacture of various food products.",
+            "E-numbers are reference numbers used by the European Union to facilitate identification of food additives. Normally each food additive is assigned a unique number, though occasionally, related additives are given an extension (\"a\", \"b\", or \"i\", \"ii\") to another E-number."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "Do you know: e100 to e199 represent \"food colors\"",
+            "Do you know: e200-e299 repesent \"Preservatives\"",
+            "Do you know: e300-e399 represent \"antioxidants, phosphates, and complexing agents\"",
+            "Do you know: e400-e499 represent \"thickeners, gelling agents, phosphates, humectants, emulsifiers\"",
+            "Do you know: e500-e599 represent \"thickeners, gelling agents, phosphates, humectants, emulsifiers\"",
+            "Do you know: e600-e699 represent \"flavor enhancers\"",
+            "Do you know: e700-e799 represent \"not used for food additives (used for feed additives)\"",
+            "Do you know: e900-e999 represent \"surface coating agents, gases, sweeteners\"",
+            "Do you know: e1000-e1399 represent \"miscellaneous additive\"",
+            "Do you know: e1400-e1499 represent \"starch derivatives\""
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": "I can help you identify if product ingredients number is halal or not."
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": true,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1513047604,
+  "fallbackIntent": false,
+  "events": []
+}

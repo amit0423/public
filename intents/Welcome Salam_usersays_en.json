@@ -1,0 +1,58 @@
+[
+  {
+    "id": "9f36fc69-a664-48ed-9b66-eabfae3b8f6f",
+    "data": [
+      {
+        "text": "assalam",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0
+  },
+  {
+    "id": "90e696da-1922-4439-9060-2ebfb207a479",
+    "data": [
+      {
+        "text": "salaam",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0
+  },
+  {
+    "id": "855ab171-131b-4981-8e8d-4716f30ffe19",
+    "data": [
+      {
+        "text": "salaam alaikum",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0
+  },
+  {
+    "id": "9857b5a9-1fb8-494d-a0ef-1302f14fc993",
+    "data": [
+      {
+        "text": "Assalamualaikum",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0
+  },
+  {
+    "id": "4b93a690-7476-44a6-8b64-7db216a75d89",
+    "data": [
+      {
+        "text": "salam",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1513132735
+  }
+]

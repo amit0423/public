@@ -1,0 +1,31 @@
+{
+  "id": "bd20dde0-59a1-4810-a641-a6506333734e",
+  "name": "Barcode_Search",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "Enter your barcode  please",
+            "send your barcode please"
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1514980699,
+  "fallbackIntent": false,
+  "events": []
+}

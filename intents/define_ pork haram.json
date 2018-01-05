@@ -1,0 +1,40 @@
+{
+  "id": "019168f1-eb99-4656-bab0-cadb2a509d00",
+  "name": "define: pork haram",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "affectedContexts": [],
+      "parameters": [
+        {
+          "id": "6071cb05-1f72-4852-bdc1-9d7a33b6640a",
+          "required": false,
+          "dataType": "@meat",
+          "name": "meat",
+          "value": "$meat",
+          "isList": false
+        }
+      ],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "The main reason pork is forbidden for Muslims is because it says in the Holy Quran that some food is allowed, while others are explicitly declared haram, which means forbidden. And pork is one of those forbidden foods. However, there is an exception that is written in the Holy Quran as well where it states that you can eat it if you are starving and there is nothing else to eat but pork. This is also in accordance with the Jewish faith, according to their laws and traditions of eating kosher meat.",
+            "Pork is haram because Allah say so, and we believe there something wise behind it, even though we may or may not know what it is, because we have limited knowledge. Maybe in the future when our knowledge and technology getting much more advance we might able to understand the real wisdom behind it."
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1513310596,
+  "fallbackIntent": false,
+  "events": []
+}

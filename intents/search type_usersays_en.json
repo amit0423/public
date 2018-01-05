@@ -1,0 +1,28 @@
+[
+  {
+    "id": "9c4ff7a0-e224-44d6-b769-eb459bcd59de",
+    "data": [
+      {
+        "text": "products",
+        "alias": "search-type",
+        "meta": "@search-type",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0
+  },
+  {
+    "id": "ec40008c-6a4c-4bfb-b2a8-b3e145282fe7",
+    "data": [
+      {
+        "text": "product",
+        "alias": "search-type",
+        "meta": "@search-type",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0
+  }
+]

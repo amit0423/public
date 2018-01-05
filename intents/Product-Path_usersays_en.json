@@ -1,0 +1,30 @@
+[
+  {
+    "id": "0e8f7b0a-67b9-4176-a68d-2d151a8eb2f4",
+    "data": [
+      {
+        "text": "product",
+        "meta": "@sys.ignore",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0
+  },
+  {
+    "id": "e7f4d4ab-41cb-4d93-b2b4-cf0dbadb6894",
+    "data": [
+      {
+        "text": "yes ,it is ",
+        "userDefined": false
+      },
+      {
+        "text": "product",
+        "meta": "@sys.ignore",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0
+  }
+]

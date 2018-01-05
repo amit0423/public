@@ -1,0 +1,15 @@
+[
+  {
+    "id": "1aa09bd9-61ba-439e-90f1-48bac6b5773a",
+    "data": [
+      {
+        "text": "noproductfound",
+        "alias": "nobarcodefound",
+        "meta": "@nobarcodefound",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0
+  }
+]

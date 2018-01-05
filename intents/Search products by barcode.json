@@ -1,0 +1,49 @@
+{
+  "id": "077e2680-8585-47b7-9739-210e2cebe394",
+  "name": "Search products by barcode",
+  "auto": true,
+  "contexts": [
+    "product"
+  ],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "search.products",
+      "affectedContexts": [],
+      "parameters": [
+        {
+          "id": "c6fd9669-8a77-4901-9cea-36a7d748acfc",
+          "required": true,
+          "dataType": "@product-barcode",
+          "name": "product-barcode",
+          "value": "$product-barcode",
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "please enter the product barcode number"
+            }
+          ],
+          "isList": true
+        }
+      ],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "do you know the product barcode?",
+            "please type the product barcode?"
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1513651380,
+  "fallbackIntent": false,
+  "events": []
+}

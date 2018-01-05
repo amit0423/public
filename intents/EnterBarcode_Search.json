@@ -1,0 +1,40 @@
+{
+  "id": "bf86e364-e29e-4699-962f-0af142f0a51b",
+  "name": "EnterBarcode_Search",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "affectedContexts": [],
+      "parameters": [
+        {
+          "id": "de59c67f-3334-4cf4-9e88-a66ba5aec65e",
+          "required": true,
+          "dataType": "@barcode",
+          "name": "barcode",
+          "value": "$barcode",
+          "isList": false
+        }
+      ],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "Your product is found",
+            "Product found"
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1514980769,
+  "fallbackIntent": false,
+  "events": []
+}

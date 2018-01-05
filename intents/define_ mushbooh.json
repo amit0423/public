@@ -1,0 +1,28 @@
+{
+  "id": "87ea9646-d918-40f7-b155-3f54212b919b",
+  "name": "define: mushbooh",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": "Mushbooh is a food designation in Islam. Literally meaning \"doubtful\" or \"suspect,\" foods are labeled mushbooh when it is unclear whether they are Halal (consumption is permitted) or Haraam(haram)\n\nMakruh is a disliked or offensive act (literally \"detestable\" or \"abominable\"). Muslims are encouraged to avoid such actions when or as possible."
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1513313863,
+  "fallbackIntent": false,
+  "events": []
+}

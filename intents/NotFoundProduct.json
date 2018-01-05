@@ -1,0 +1,40 @@
+{
+  "id": "6934df36-6cbf-4025-9bec-020e71fd0a28",
+  "name": "NotFoundProduct",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "affectedContexts": [],
+      "parameters": [
+        {
+          "id": "d610abd3-0f0b-475c-b3cc-940785cda6ba",
+          "dataType": "@nobarcodefound",
+          "name": "nobarcodefound",
+          "value": "$nobarcodefound",
+          "isList": false
+        }
+      ],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "No Product found",
+            "your product is not found",
+            "your product is not here"
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1514981780,
+  "fallbackIntent": false,
+  "events": []
+}

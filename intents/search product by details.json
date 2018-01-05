@@ -1,0 +1,64 @@
+{
+  "id": "63d1f014-dc8f-45c3-905d-e2e0efee28c2",
+  "name": "search product by details",
+  "auto": true,
+  "contexts": [
+    "product"
+  ],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "search.products",
+      "affectedContexts": [],
+      "parameters": [
+        {
+          "id": "86b09881-56d9-42e7-a20b-d152b8023dda",
+          "required": true,
+          "dataType": "@product-brand",
+          "name": "product-brand",
+          "value": "$product-brand",
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "Please enter the brand name?"
+            },
+            {
+              "lang": "en",
+              "value": "what is the brand?"
+            }
+          ],
+          "isList": false
+        },
+        {
+          "id": "d3d76f4a-6dbf-4815-ac51-9659d4d5129a",
+          "required": true,
+          "dataType": "@product-name",
+          "name": "product-name",
+          "value": "$product-name",
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "enter the product name"
+            }
+          ],
+          "isList": false
+        }
+      ],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": "Searching the product database for $product-brand - $product-name"
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1513651959,
+  "fallbackIntent": false,
+  "events": []
+}

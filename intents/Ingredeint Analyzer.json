@@ -1,0 +1,41 @@
+{
+  "id": "a1b69bb0-d1ca-447b-a8b7-64d58bd44b58",
+  "name": "Ingredeint Analyzer",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "affectedContexts": [],
+      "parameters": [
+        {
+          "id": "64ef3287-2880-48c8-b0ed-9e2e9112dc4d",
+          "required": true,
+          "dataType": "@meat1",
+          "name": "meat1",
+          "value": "$meat1"
+        }
+      ],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "Yes it is halal",
+            "It is halal product",
+            "Happy to know your product is halal",
+            "your product is halal"
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1514984069,
+  "fallbackIntent": false,
+  "events": []
+}

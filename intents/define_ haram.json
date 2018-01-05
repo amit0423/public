@@ -1,0 +1,41 @@
+{
+  "id": "8dbd9ab3-96ad-4585-ad86-5fca992dcf2b",
+  "name": "define: haram",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "Harm (often Haraam) is an Arabic term meaning \"forbidden\". Haram is anything that is prohibited by the faith. Its antonym is halal.",
+            "Haram is an Arabic term meaning \"forbidden\". Thus it may refer to: either something sacred to which access is forbidden to the people who are not in a state of purity or who are not initiated into the sacred knowledge; or to an evil thus \"sinful action that is forbidden to be done\"."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": "According to the current Islamic thinking, the following are considered Najis and therefore Haram (unlawful, prohibited):\n\n- Swine including all by-products.\n- Insects considered ugly or filthy such as worms, lice, flies, etc.\n- Animals with fangs such as tigers, lions, cats etc,\n- Birds that have talons with which they catch their prey such as owls, eagles, etc.\n- Animals which Islam encourages to kill such as scorpions, centipedes, rats etc,\n- Dogs\n- Animals which Islam forbids to kill such as bees etc.\n- Animals which have toxins, poisons or produce ill effects when eaten such as some fish etc.\n- Amphibian animals such as crocodiles, turtles, frogs etc.\n- Meat (limbs, tails etc.) which have been cut from a live animal.\n- Lawful animals not slaughtered according to Islamic rites. (Fish is exempt from slaughtering).\n- Carrion or dead animals."
+        },
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": "Plant and their products.\n- Poisonous Plant.\n- Intoxicating Plant\n\nLiquids and their products\n- Poisonous drinks\n- Intoxicating drinks\n\nOther matters and their products\n- Faeces and urine\n- Placental tissue\n- Blood"
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1513308352,
+  "fallbackIntent": false,
+  "events": []
+}

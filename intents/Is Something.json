@@ -1,0 +1,32 @@
+{
+  "id": "6e14a57c-2631-4420-bd63-a45b5e213206",
+  "name": "Is Something",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "Is it  a product?",
+            "Is it a product,ingredients,menu or place?",
+            "product,ingredients,menu or place?"
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1514975116,
+  "fallbackIntent": false,
+  "events": []
+}

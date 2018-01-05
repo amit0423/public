@@ -1,0 +1,27 @@
+[
+  {
+    "value": "products",
+    "synonyms": [
+      "products",
+      "product",
+      "branded product"
+    ]
+  },
+  {
+    "value": "place",
+    "synonyms": [
+      "place"
+    ]
+  },
+  {
+    "value": "ingredients",
+    "synonyms": [
+      "ingredients",
+      "enumbers",
+      "e-number",
+      "enumber",
+      "product ingredients",
+      "product contents"
+    ]
+  }
+]

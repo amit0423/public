@@ -1,0 +1,31 @@
+{
+  "id": "1b6976a5-2181-4397-aaa2-232e3060fc41",
+  "name": "lotsofproduct",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "Lots of product found,Please enter your ingredient name",
+            "Please enter your ingredient name lots of product found"
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1514982963,
+  "fallbackIntent": false,
+  "events": []
+}

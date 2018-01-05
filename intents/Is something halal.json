@@ -1,0 +1,58 @@
+{
+  "id": "f49c5e67-017c-4435-8b20-48bf8bc11978",
+  "name": "Is something halal",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "barcodesearch",
+      "affectedContexts": [],
+      "parameters": [
+        {
+          "id": "22e0ba5b-4148-4955-9451-66dc06b09626",
+          "required": true,
+          "dataType": "@meat",
+          "name": "meat",
+          "value": "$meat",
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "Do you have barcode???"
+            }
+          ],
+          "isList": true
+        },
+        {
+          "id": "15e458f5-c0de-4ca3-adf5-647a72039155",
+          "required": true,
+          "dataType": "@barcode",
+          "name": "barcode",
+          "value": "$barcode",
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "yes it is halal product"
+            }
+          ],
+          "isList": true
+        }
+      ],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": "$barcode yes it is halal"
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1514962742,
+  "fallbackIntent": false,
+  "events": []
+}
