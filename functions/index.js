@@ -6,8 +6,11 @@ exports.dialogflowFirebaseProduct = functions.https.onRequest((request, response
  
   if (request.body.result) {
     searchProduct(request, response);
+    console.log("Hello","Hello");
   } else if (request.body.queryResult) {
     barcodeSearch(request, response);
+        console.log("Hello1","Hello1");
+
   } else {
     console.log('Invalid Request');
     return response.status(400).end('Invalid Webhook Request');
@@ -16,62 +19,63 @@ exports.dialogflowFirebaseProduct = functions.https.onRequest((request, response
 
 
 function searchProduct (request, response) {
-  let action = request.body.result.action; 
-  let parameters = request.body.result.parameters; 
-  let inputContexts = request.body.result.contexts; 
-  let requestSource = (request.body.originalRequest) ? request.body.originalRequest.source : undefined;
-  const app = new DialogflowApp({request: request, response: response});
-  const actionHandlers = {
-    'input.welcome': () => {
-     
-        response.send({
+	    console.log("Demo","Demo");
+
+
+switch (request.body.result.action) {
+ //console.log("Demo1","Demo1");
+        case 'input.welcome':
+
+             response.send({
         speech: "hello welcome to  HalalBots."
     });
-    
-    },
-	'input.types': () => {
-      
-        sendResponse('it is product ,ingredient ,menu or place ?'); 
-     
-    },
-    'input.product_type':()=>
-    {
-    	sendResponse('Do you have the barcode?');
-    };
-'input.barcodehave':()=>
-    {
-    	sendResponse('Enter your barcode,Please');
-    };
-	
-    'default': () => {
-     
-        let responseToUser = {
-          
-          speech: 'default else :This message is from Dialogflow\'s Cloud Functions for Firebase editor!', // spoken response
-          text: 'default else :This is from Dialogflow\'s Cloud Functions for Firebase editor! :-)' // displayed response
-        };
-        sendResponse(responseToUser);
-      
+            break;
+
+        case 'input.types':
+
+  response.send({
+        speech: "it is product ,ingredient or place"
+    });
+
+            break;
+             case 'input.barcodehave':
+
+             response.send({
+        speech: "Please,Enter your barcode"
+    });
+            break;
+
+        default:
+            response.send({
+                speech: "no action matched in webhook"
+             //   barcodeSearch(request, response);
+            });
     }
-  };
-  if (!actionHandlers[action]) {
-    action = 'default';
+
   }
-  actionHandlers[action]();
-   
-  function sendResponse (responseToUser) {
-    if (typeof responseToUser === 'string') {
-      let responseJson = {};
-      responseJson.speech = responseToUser; 
-      responseJson.displayText = responseToUser; 
-      response.json(responseJson); 
-    } else {
-      let responseJson = {};
-      responseJson.speech = responseToUser.speech || responseToUser.displayText;
-      responseJson.displayText = responseToUser.displayText || responseToUser.speech;
-      responseJson.data = responseToUser.data;
-      responseJson.contextOut = responseToUser.outputContexts;
-      response.json(responseJson); 
+ 
+function barcodeSearch(request, response)
+
+{
+	    console.log("Demo1","Demo1");
+
+
+switch (request.body.queryResult.action) {
+ //console.log("Demo1","Demo1");
+       
+
+        case 'input.barcodenumber':
+
+  response.send({
+        speech: "${params.barcode}your barcode is matched,Please wait for a second.We analys your ingredient"
+    });
+
+            break;
+
+        default:
+            response.send({
+                speech: "no action matched in webhook11"
+            });
     }
+
   }
-}
