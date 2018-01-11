@@ -1,105 +1,300 @@
-
-
 const functions = require('firebase-functions'); // Cloud Functions for Firebase library
-var admin = require("firebase-admin");
-admin.initializeApp(functions.config().firebase);
-//var firebasedata = admin.firebase();
+//const request = require('request');
 
-// var firebase = require("firebase");
-// var ref = new Firebase("https://newagent-79cf2.firebaseio.com");
-// var config = {
-//     apiKey: "AIzaSyCdb1HzXA3aBH6udAJsVRQPCD5FjkOsCX4",
-//     authDomain: "newagent-79cf2.firebaseapp.com",
-//     databaseURL: "https://newagent-79cf2.firebaseio.com",
-//     projectId: "newagent-79cf2",
-//     storageBucket: "newagent-79cf2.appspot.com",
-//     messagingSenderId: "688728226903"
-//   };
-//  firebase.initializeApp(config);
-// var rootRef = firebase.database().ref();
+
 exports.dialogflowFirebaseProduct = functions.https.onRequest((request, response) => {
- // let pro=request.body.result;
- // let barcodedata=request.body.result;
-  if (request.body.result) {
-  	
-    searchProduct(request, response);
-    console.log("Hello",request.body.result.action);
-  } 
-  else if (request.body.queryResult) {
-  	console.log("Hello1",request.body.queryResult);
-    barcodeSearch(request, response);
-        console.log("Hello1","Hello1");
+  console.log('Dialogflow Request headers: ' + JSON.stringify(request.headers));
+  console.log('Dialogflow Request body: ' + JSON.stringify(request.body));
+  console.log(request.body.result.action);
+  if (request.body.result.action=='input.salam'||request.body.result.action=='input.barcodenumber') {
+  	console.log("hello","hello");
+  	barcodeSearch(request, response);
+  } else if (request.body.result.action=='input.welcome') {
+  	  	console.log("hello1","hello1");
+ searchProduct(request, response);
+ //   barcodeSearch(request, response);
+  }
 
-  } else {
+else if (request.body.result.action=='input.ingredient') {
+  	  	console.log("hello2","hello2");
+ getIngredientList(request, response);
+ //   barcodeSearch(request, response);
+  }
+  else if (request.body.result.action=='input.types') {
+  	  	console.log("hello3","hello3");
+ analyzeIngredient(request, response);
+ //   barcodeSearch(request, response);
+  }
+   else {
     console.log('Invalid Request');
-    return response.status(400).end('Invalid Webhook Request');
+    return response.status(400).end('Invalid Webhook Request (expecting v1 or v2 webhook request)');
   }
 });
 
+/*
+* Function to handle v1 webhook requests from Dialogflow
+*/
+function searchProduct(request, response) {
+	  	console.log("demooooooo","demoooooooo");
 
-function searchProduct (request, response) {
-	    console.log("Demo","Demo");
+  let action = request.body.result.action; // https://dialogflow.com/docs/actions-and-parameters
+  let parameters = request.body.result.parameters; // https://dialogflow.com/docs/actions-and-parameters
+  let inputContexts = request.body.result.contexts; // https://dialogflow.com/docs/contexts
+  let requestSource = (request.body.originalRequest) ? request.body.originalRequest.source : undefined;
+//  const app = new DialogflowApp({request: request, response: response});
+  // Create handlers for Dialogflow actions as well as a 'default' handler
+  const actionHandlers = {
+    // The default welcome intent has been matched, welcome the user (https://dialogflow.com/docs/events#default_welcome_intent)
+    'input.welcome': () => {
+      // Use the Actions on Google lib to respond to Google requests; for other requests use JSON
+     
+        sendResponse('Hello, Welcome to my Dialogflow agent!'); // Send simple response to user
+      
+    },
+	
+	
+   
+    // Default handler for unknown or undefined actions
+    'default': () => {
+      
+        let responseToUser = {
+          //data: richResponsesV1, // Optional, uncomment to enable
+          //outputContexts: [{'name': 'weather', 'lifespan': 2, 'parameters': {'city': 'Rome'}}], // Optional, uncomment to enable
+         // speech: 'default else :This message is from Dialogflow\'s Cloud Functions for Firebase editor!', // spoken response
+          text: 'default else :This is from Dialogflow\'s Cloud Functions for Firebase editor! :-)' // displayed response
+        };
+        sendResponse(responseToUser);
+      }
+  };
 
-
-switch (request.body.result.action) {
- //console.log("Demo1","Demo1");
-        case 'input.welcome':
-
-             response.send({
-        speech: "hello welcome to  HalalBots."
-    });
-            break;
-
-        case 'input.types':
-
-  response.send({
-        speech: "it is product ,ingredient or place"
-    });
-
-            break;
-           
+  // If undefined or unknown action use the default handler
+  if (!actionHandlers[action]) {
+    action = 'default';
+  }
+  // Run the proper handler function to handle the request from Dialogflow
+  actionHandlers[action]();
   
-
-        default:
-         barcodeSearch(request, response);
-
-            // response.send({
-            //     speech: "no action matched in webhook"
-            // });
+  // Function to send correctly formatted responses to Dialogflow which are then sent to the user
+  function sendResponse (responseToUser) {
+    // if the response is a string send it as a response to the user
+    if (typeof responseToUser === 'string') {
+      let responseJson = {};
+      responseJson.speech = responseToUser; // spoken response
+      responseJson.displayText = responseToUser; // displayed response
+      response.json(responseJson); // Send response to Dialogflow
+    } else {
+      // If the response to the user includes rich responses or contexts send them to Dialogflow
+      let responseJson = {};
+      // If speech or displayText is defined, use it to respond (if one isn't defined use the other's value)
+      responseJson.speech = responseToUser.speech || responseToUser.displayText;
+      responseJson.displayText = responseToUser.displayText || responseToUser.speech;
+      // Optional: add rich messages for integrations (https://dialogflow.com/docs/rich-messages)
+      responseJson.data = responseToUser.data;
+      // Optional: add contexts (https://dialogflow.com/docs/contexts)
+      responseJson.contextOut = responseToUser.outputContexts;
+      console.log('Response to Dialogflow: ' + JSON.stringify(responseJson));
+      response.json(responseJson); // Send response to Dialogflow
     }
-
   }
- 
-function barcodeSearch(request, response)
-
-{
-	    console.log("Demo1","Demo1");
- // let action = (request.body.queryResult.action) ? request.body.queryResult.action : 'default';
+}
 
 
-switch (request.body.queryResult.action) {
- //console.log("Demo1","Demo1");
-         case 'input.barcodehave':
+function barcodeSearch(request, response) {
+ console.log("demo","demo");
+// 	console.log("demooooooo","demoooooooo");
 
-             response.send({
-        speech: "Please,Enter your barcode"
-    });
-            break;
+  let action = request.body.result.action; // https://dialogflow.com/docs/actions-and-parameters
+  let parameters = request.body.result.parameters; // https://dialogflow.com/docs/actions-and-parameters
+  let inputContexts = request.body.result.contexts; // https://dialogflow.com/docs/contexts
+  let requestSource = (request.body.originalRequest) ? request.body.originalRequest.source : undefined;
+//  const app = new DialogflowApp({request: request, response: response});
+  // Create handlers for Dialogflow actions as well as a 'default' handler
+  const actionHandlers = {
+    // The default welcome intent has been matched, welcome the user (https://dialogflow.com/docs/events#default_welcome_intent)
+    'input.salam': () => {
+      // Use the Actions on Google lib to respond to Google requests; for other requests use JSON
+     
+        sendResponse('Wa-Alaikum-Salaam'); // Send simple response to user
+      
+    },
+	
+	'input.barcodenumber': () => {
+      // Use the Actions on Google lib to respond to Google requests; for other requests use JSON
+     
+        sendResponse('Your barcode is matched'); // Send simple response to user
+      
+    },
+   
+    // Default handler for unknown or undefined actions
+    'default': () => {
+      
+        let responseToUser = {
+          //data: richResponsesV1, // Optional, uncomment to enable
+          //outputContexts: [{'name': 'weather', 'lifespan': 2, 'parameters': {'city': 'Rome'}}], // Optional, uncomment to enable
+         // speech: 'default else :This message is from Dialogflow\'s Cloud Functions for Firebase editor!', // spoken response
+          text: 'default else :This is from Dialogflow\'s Cloud Functions for Firebase editor! :-)' // displayed response
+        };
+        sendResponse(responseToUser);
+      }
+  };
 
-        case 'input.barcodenumber':
-       // let params = request.body.queryResult.parameters;
-
-  response.send({
-  	speech:"barcode is matched"
-        // speech: "${params.barcode}your barcode is matched,Please wait for a second.We analys your ingredient"
-    });
-
-            break;
-
-        default:
-            response.send({
-                speech: "no action matched in webhook11"
-            });
+  // If undefined or unknown action use the default handler
+  if (!actionHandlers[action]) {
+    action = 'default';
+  }
+  // Run the proper handler function to handle the request from Dialogflow
+  actionHandlers[action]();
+  
+  // Function to send correctly formatted responses to Dialogflow which are then sent to the user
+  function sendResponse (responseToUser) {
+    // if the response is a string send it as a response to the user
+    if (typeof responseToUser === 'string') {
+      let responseJson = {};
+      responseJson.speech = responseToUser; // spoken response
+      responseJson.displayText = responseToUser; // displayed response
+      response.json(responseJson); // Send response to Dialogflow
+    } else {
+      // If the response to the user includes rich responses or contexts send them to Dialogflow
+      let responseJson = {};
+      // If speech or displayText is defined, use it to respond (if one isn't defined use the other's value)
+      responseJson.speech = responseToUser.speech || responseToUser.displayText;
+      responseJson.displayText = responseToUser.displayText || responseToUser.speech;
+      // Optional: add rich messages for integrations (https://dialogflow.com/docs/rich-messages)
+      responseJson.data = responseToUser.data;
+      // Optional: add contexts (https://dialogflow.com/docs/contexts)
+      responseJson.contextOut = responseToUser.outputContexts;
+      console.log('Response to Dialogflow: ' + JSON.stringify(responseJson));
+      response.json(responseJson); // Send response to Dialogflow
     }
-
   }
+}
+
+function getIngredientList(request, response) {
+ console.log("demo3","demo3");
+// 	console.log("demooooooo","demoooooooo");
+
+  let action = request.body.result.action; // https://dialogflow.com/docs/actions-and-parameters
+  let parameters = request.body.result.parameters; // https://dialogflow.com/docs/actions-and-parameters
+  let inputContexts = request.body.result.contexts; // https://dialogflow.com/docs/contexts
+  let requestSource = (request.body.originalRequest) ? request.body.originalRequest.source : undefined;
+//  const app = new DialogflowApp({request: request, response: response});
+  // Create handlers for Dialogflow actions as well as a 'default' handler
+  const actionHandlers = {
+    // The default welcome intent has been matched, welcome the user (https://dialogflow.com/docs/events#default_welcome_intent)
+    'input.ingredient': () => {
+      // Use the Actions on Google lib to respond to Google requests; for other requests use JSON
+     
+        sendResponse('Happy to know your product is halal'); // Send simple response to user
+      
+    },
+	
+	
+   
+    // Default handler for unknown or undefined actions
+    'default': () => {
+      
+        let responseToUser = {
+          //data: richResponsesV1, // Optional, uncomment to enable
+          //outputContexts: [{'name': 'weather', 'lifespan': 2, 'parameters': {'city': 'Rome'}}], // Optional, uncomment to enable
+         // speech: 'default else :This message is from Dialogflow\'s Cloud Functions for Firebase editor!', // spoken response
+          text: 'default else :This is from Dialogflow\'s Cloud Functions for Firebase editor! :-)' // displayed response
+        };
+        sendResponse(responseToUser);
+      }
+  };
+
+  // If undefined or unknown action use the default handler
+  if (!actionHandlers[action]) {
+    action = 'default';
+  }
+  // Run the proper handler function to handle the request from Dialogflow
+  actionHandlers[action]();
+  
+  // Function to send correctly formatted responses to Dialogflow which are then sent to the user
+  function sendResponse (responseToUser) {
+    // if the response is a string send it as a response to the user
+    if (typeof responseToUser === 'string') {
+      let responseJson = {};
+      responseJson.speech = responseToUser; // spoken response
+      responseJson.displayText = responseToUser; // displayed response
+      response.json(responseJson); // Send response to Dialogflow
+    } else {
+      // If the response to the user includes rich responses or contexts send them to Dialogflow
+      let responseJson = {};
+      // If speech or displayText is defined, use it to respond (if one isn't defined use the other's value)
+      responseJson.speech = responseToUser.speech || responseToUser.displayText;
+      responseJson.displayText = responseToUser.displayText || responseToUser.speech;
+      // Optional: add rich messages for integrations (https://dialogflow.com/docs/rich-messages)
+      responseJson.data = responseToUser.data;
+      // Optional: add contexts (https://dialogflow.com/docs/contexts)
+      responseJson.contextOut = responseToUser.outputContexts;
+      console.log('Response to Dialogflow: ' + JSON.stringify(responseJson));
+      response.json(responseJson); // Send response to Dialogflow
+    }
+  }
+}
+
+function analyzeIngredient(request, response) {
+ console.log("demo4","demo4");
+// 	console.log("demooooooo","demoooooooo");
+
+  let action = request.body.result.action; // https://dialogflow.com/docs/actions-and-parameters
+  let parameters = request.body.result.parameters; // https://dialogflow.com/docs/actions-and-parameters
+  let inputContexts = request.body.result.contexts; // https://dialogflow.com/docs/contexts
+  let requestSource = (request.body.originalRequest) ? request.body.originalRequest.source : undefined;
+//  const app = new DialogflowApp({request: request, response: response});
+  // Create handlers for Dialogflow actions as well as a 'default' handler
+  const actionHandlers = {
+    // The default welcome intent has been matched, welcome the user (https://dialogflow.com/docs/events#default_welcome_intent)
+    'input.types': () => {
+      // Use the Actions on Google lib to respond to Google requests; for other requests use JSON
+     
+        sendResponse('Please wait for a while'); // Send simple response to user
+      
+    },
+	
+	
+   
+    // Default handler for unknown or undefined actions
+    'default': () => {
+      
+        let responseToUser = {
+          //data: richResponsesV1, // Optional, uncomment to enable
+          //outputContexts: [{'name': 'weather', 'lifespan': 2, 'parameters': {'city': 'Rome'}}], // Optional, uncomment to enable
+         // speech: 'default else :This message is from Dialogflow\'s Cloud Functions for Firebase editor!', // spoken response
+          text: 'default else :This is from Dialogflow\'s Cloud Functions for Firebase editor! :-)' // displayed response
+        };
+        sendResponse(responseToUser);
+      }
+  };
+
+  // If undefined or unknown action use the default handler
+  if (!actionHandlers[action]) {
+    action = 'default';
+  }
+  // Run the proper handler function to handle the request from Dialogflow
+  actionHandlers[action]();
+  
+  // Function to send correctly formatted responses to Dialogflow which are then sent to the user
+  function sendResponse (responseToUser) {
+    // if the response is a string send it as a response to the user
+    if (typeof responseToUser === 'string') {
+      let responseJson = {};
+      responseJson.speech = responseToUser; // spoken response
+      responseJson.displayText = responseToUser; // displayed response
+      response.json(responseJson); // Send response to Dialogflow
+    } else {
+      // If the response to the user includes rich responses or contexts send them to Dialogflow
+      let responseJson = {};
+      // If speech or displayText is defined, use it to respond (if one isn't defined use the other's value)
+      responseJson.speech = responseToUser.speech || responseToUser.displayText;
+      responseJson.displayText = responseToUser.displayText || responseToUser.speech;
+      // Optional: add rich messages for integrations (https://dialogflow.com/docs/rich-messages)
+      responseJson.data = responseToUser.data;
+      // Optional: add contexts (https://dialogflow.com/docs/contexts)
+      responseJson.contextOut = responseToUser.outputContexts;
+      console.log('Response to Dialogflow: ' + JSON.stringify(responseJson));
+      response.json(responseJson); // Send response to Dialogflow
+    }
+  }
+}
