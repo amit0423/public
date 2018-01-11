@@ -1,6 +1,42 @@
 const functions = require('firebase-functions'); // Cloud Functions for Firebase library
 //const request = require('request');
 
+var firebase =require('firebase');
+var config = {
+    apiKey: "AIzaSyCdb1HzXA3aBH6udAJsVRQPCD5FjkOsCX4",
+    authDomain: "newagent-79cf2.firebaseapp.com",
+    databaseURL: "https://newagent-79cf2.firebaseio.com",
+    projectId: "newagent-79cf2",
+    storageBucket: "newagent-79cf2.appspot.com",
+    messagingSenderId: "688728226903"
+  };
+  firebase.initializeApp(config);
+
+  var ref=firebase.database().ref('external/barcode/GTIN');
+  console.log("reference",ref.key);
+  ref.on("value", function(snapshot) {
+  // ref.on("child_changed", function(data) {
+   var player = snapshot.val();
+   console.log("The updated player name is " + player.Brand);
+
+   console.log(snapshot.val());
+}, function (error) {
+   console.log("Error: " + error.code);
+});
+  var messageRef=ref.child('external/barcode/GTIN');
+  console.log("firebase",messageRef.key);
+//   var playersRef = firebase.database().ref("players/");
+
+// playersRef.on("child_changed", function(data) {
+//    var player = data.val();
+//    console.log("The updated player name is " + player.name);
+// });
+//  var scoresRef = db.ref("93482608");
+// scoresRef.orderByValue().on("value", function(snapshot) {
+//   snapshot.forEach(function(data) {
+//     console.log("The " + data.key + " dinosaur's score is " + data.val());
+//   });
+// });
 
 exports.dialogflowFirebaseProduct = functions.https.onRequest((request, response) => {
   console.log('Dialogflow Request headers: ' + JSON.stringify(request.headers));
@@ -102,6 +138,7 @@ function searchProduct(request, response) {
 function barcodeSearch(request, response) {
  console.log("demo","demo");
 // 	console.log("demooooooo","demoooooooo");
+  // var messageRef=ref.child('external/barcode/GTIN');
 
   let action = request.body.result.action; // https://dialogflow.com/docs/actions-and-parameters
   let parameters = request.body.result.parameters; // https://dialogflow.com/docs/actions-and-parameters
@@ -119,10 +156,35 @@ function barcodeSearch(request, response) {
     },
 	
 	'input.barcodenumber': () => {
-      // Use the Actions on Google lib to respond to Google requests; for other requests use JSON
-     
-        sendResponse('Your barcode is matched'); // Send simple response to user
-      
+	//console.log("firebase","firebase");
+	 // var ref=firebase.database().ref('newagent-79cf2');
+  // var messageRef=ref.child('external/barcode/GTIN');
+  // console.log("firebase",messageRef.key);
+ // firebase.collection(messageRef).get()
+ //                .then((querySnapshot) => {
+
+ //                    var barcode = [];
+ //                    querySnapshot.forEach((doc) => { barcode.push(doc.data()) });
+ //                    // now orders have something like this [ {...}, {...}, {...} ]
+
+ //                    // converting array to speech
+ //                    var speech = `you have ${barcode.length} barcode \n`;
+
+ //                    barcode.forEach((eachOrder, index) => {
+ //                        speech += `${eachOrder.barcode} is matched`
+ //                    })
+
+ //                    response.send({
+ //                        speech: speech
+ //                    });
+ //                })
+ //                .catch((err) => {
+ //                    console.log('Error getting documents', err);
+
+ //                    sendResponse('Your barcode is matched');
+ //                })
+
+      sendResponse('Your barcode is matched');
     },
    
     // Default handler for unknown or undefined actions
