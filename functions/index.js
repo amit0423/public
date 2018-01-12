@@ -13,30 +13,9 @@ var config = {
   firebase.initializeApp(config);
 
   var ref=firebase.database().ref('external/barcode/GTIN');
-  console.log("reference",ref.key);
-  ref.on("value", function(snapshot) {
-  // ref.on("child_changed", function(data) {
-   var player = snapshot.val();
-   console.log("The updated player name is " + player.Brand);
-
-   console.log(snapshot.val());
-}, function (error) {
-   console.log("Error: " + error.code);
-});
-  var messageRef=ref.child('external/barcode/GTIN');
+var messageRef=ref.child('external/barcode/GTIN');
   console.log("firebase",messageRef.key);
-//   var playersRef = firebase.database().ref("players/");
 
-// playersRef.on("child_changed", function(data) {
-//    var player = data.val();
-//    console.log("The updated player name is " + player.name);
-// });
-//  var scoresRef = db.ref("93482608");
-// scoresRef.orderByValue().on("value", function(snapshot) {
-//   snapshot.forEach(function(data) {
-//     console.log("The " + data.key + " dinosaur's score is " + data.val());
-//   });
-// });
 
 exports.dialogflowFirebaseProduct = functions.https.onRequest((request, response) => {
   console.log('Dialogflow Request headers: ' + JSON.stringify(request.headers));
@@ -156,37 +135,32 @@ function barcodeSearch(request, response) {
     },
 	
 	'input.barcodenumber': () => {
-	//console.log("firebase","firebase");
-	 // var ref=firebase.database().ref('newagent-79cf2');
-  // var messageRef=ref.child('external/barcode/GTIN');
-  // console.log("firebase",messageRef.key);
- // firebase.collection(messageRef).get()
- //                .then((querySnapshot) => {
+		console.log("barcode",action);
+console.log("reference",ref.key);
+// firebase.ref('external/barcode/GTIN/').get()
+//                 .then((querySnapshot) => {
+var playersRef = firebase.database().ref("external/barcode/GTIN/");
+// playersRef.orderByChild("name").equalTo("93482615").on("child_added", function(data) {
+//    console.log("Equal to filter: " + data.val().Brand);
+// });
 
- //                    var barcode = [];
- //                    querySnapshot.forEach((doc) => { barcode.push(doc.data()) });
- //                    // now orders have something like this [ {...}, {...}, {...} ]
+// playersRef.equalTo(93482608).on("child_added", function(data) {
+//    console.log("Equal to filter: ","hehrkjhksg");
+//    sendResponse('your barcode is matched');
+// });
 
- //                    // converting array to speech
- //                    var speech = `you have ${barcode.length} barcode \n`;
+var queryRef = playersRef.orderByChild("fullName").equalTo("93482608");
+playersRef.on("child_added", function(data, prevChildKey) {
+   var newPlayer = data.val();
+   console.log("Brand Name: " + newPlayer.Brand);
+   console.log("GLN: " + newPlayer.GLN);
+ // console.log("number: " + newPlayer.number);
+   console.log("Previous Barcode: " + prevChildKey);
+      sendResponse('your barcode is matched');
 
- //                    barcode.forEach((eachOrder, index) => {
- //                        speech += `${eachOrder.barcode} is matched`
- //                    })
+});
 
- //                    response.send({
- //                        speech: speech
- //                    });
- //                })
- //                .catch((err) => {
- //                    console.log('Error getting documents', err);
-
- //                    sendResponse('Your barcode is matched');
- //                })
-
-      sendResponse('Your barcode is matched');
-    },
-   
+},
     // Default handler for unknown or undefined actions
     'default': () => {
       
